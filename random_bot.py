@@ -98,8 +98,6 @@ class RandomBot:
             if track.buttons[next_x, next_y]:
                 button_color = int(track.button_colors[next_x, next_y])
                 next_phase = phase[:]
-                if button_color >= len(next_phase):
-                    next_phase.extend([0] * (button_color - len(next_phase) + 1))
                 next_phase[button_color] ^= 1
 
             neighbors.append(((next_x, next_y), next_phase, opt))
